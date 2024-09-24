@@ -20,17 +20,12 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const corsOptions = {
-  origin: process.env.FRONTEND_URL,
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
-
 // create an express server
 const app = express();
 
 // json api middileware
 
-// app.use(cors(corsOptions));
+app.use(cors());
 
 app.use("/api/order/checkout/webhook", express.raw({ type: "*/*" }));
 
