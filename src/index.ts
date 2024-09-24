@@ -30,7 +30,7 @@ const app = express();
 
 // json api middileware
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use("/api/order/checkout/webhook", express.raw({ type: "*/*" }));
 
